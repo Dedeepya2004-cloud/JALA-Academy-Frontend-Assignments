@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Access and Properties</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f6fa;
+            margin: 0;
+        }
+
+        header {
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        button {
+            background: #243b55;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1a2d42;
+        }
+
+        #disappearButton {
+            background: #e63946;
+        }
+
+        .result {
+            background: #eef4f8;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>JavaScript Access and Properties</h1>
+    <p>this, call(), apply(), Counter, Getter, Setter and Prototype</p>
+</header>
+
+
+<div class="container">
+
+    <!-- 1. this keyword -->
+
+    <div class="box">
+        <h2>1. this Keyword</h2>
+
+        <p>
+            Click the button and it will disappear using
+            the <b>this</b> keyword.
+        </p>
+
+        <button id="disappearButton"
+                onclick="this.style.display='none'">
+            Click Me - I Will Disappear
+        </button>
+    </div>
+
+
+    <!-- 2. call() and apply() -->
+
+    <div class="box">
+
+        <h2>2. call() and apply()</h2>
+
+        <p>
+            Both call() and apply() invoke a function
+            with a specified object as this.
+        </p>
+
+        <button onclick="useCall()">
+            Use call()
+        </button>
+
+        <button onclick="useApply()">
+            Use apply()
+        </button>
+
+        <div id="callApplyResult" class="result"></div>
+
+    </div>
+
+
+    <!-- 3. Counter -->
+
+    <div class="box">
+
+        <h2>3. Counter</h2>
+
+        <p>Click the button to increment the counter.</p>
+
+        <button onclick="increaseCounter()">
+            Count
+        </button>
+
+        <div id="counterResult" class="result">
+            Counter: 0
+        </div>
+
+    </div>
+
+
+    <!-- 4. Getter and Setter -->
+
+    <div class="box">
+
+        <h2>4. Counter Using Getter and Setter</h2>
+
+        <button onclick="increaseGetterCounter()">
+            Increase Counter
+        </button>
+
+        <div id="getterResult" class="result">
+            Counter: 0
+        </div>
+
+    </div>
+
+
+    <!-- 5. Prototype -->
+
+    <div class="box">
+
+        <h2>5. Properties Using Prototype</h2>
+
+        <p>
+            Properties are added to an existing function
+            using prototype.
+        </p>
+
+        <div id="prototypeResult" class="result"></div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    // ==========================================
+    // 1. this KEYWORD
+    // ==========================================
+
+    // The button disappears when clicked.
+    // "this" refers to the button itself.
+
+
+    // ==========================================
+    // 2. call() AND apply()
+    // ==========================================
+
+    let person = {
+        firstname: "Dedeepya",
+        lastname: "Potnuru"
+    };
+
+
+    function displayDetails(city, country) {
+
+        return this.firstname + " " +
+               this.lastname +
+               " lives in " +
+               city + ", " +
+               country;
+    }
+
+
+    // Using call()
+
+    function useCall() {
+
+        let result = displayDetails.call(
+            person,
+            "Hyderabad",
+            "India"
+        );
+
+        document.getElementById("callApplyResult").innerHTML =
+            "<b>Using call():</b><br>" + result;
+    }
+
+
+    // Using apply()
+
+    function useApply() {
+
+        let result = displayDetails.apply(
+            person,
+            ["Hyderabad", "India"]
+        );
+
+        document.getElementById("callApplyResult").innerHTML =
+            "<b>Using apply():</b><br>" + result;
+    }
+
+
+    // ==========================================
+    // 3. COUNTER
+    // ==========================================
+
+    let counter = 0;
+
+
+    function increaseCounter() {
+
+        counter++;
+
+        document.getElementById("counterResult").innerHTML =
+            "Counter: " + counter;
+    }
+
+
+    // ==========================================
+    // 4. GETTER AND SETTER
+    // ==========================================
+
+    let counterObject = {
+
+        _count: 0,
+
+        get count() {
+            return this._count;
+        },
+
+        set count(value) {
+            this._count = value;
+        }
+
+    };
+
+
+    function increaseGetterCounter() {
+
+        counterObject.count =
+            counterObject.count + 1;
+
+        document.getElementById("getterResult").innerHTML =
+            "Counter using getter/setter: " +
+            counterObject.count;
+    }
+
+
+    // ==========================================
+    // 5. PROTOTYPE
+    // ==========================================
+
+    function Student(name) {
+
+        this.name = name;
+    }
+
+
+    // Add property using prototype
+
+    Student.prototype.course =
+        "Frontend Development";
+
+
+    // Add method using prototype
+
+    Student.prototype.getDetails = function() {
+
+        return this.name +
+               " is learning " +
+               this.course;
+    };
+
+
+    let student1 =
+        new Student("Dedeepya");
+
+
+    document.getElementById("prototypeResult").innerHTML =
+
+        "Name: " +
+        student1.name +
+
+        "<br>Course: " +
+        student1.course +
+
+        "<br>Details: " +
+        student1.getDetails();
+
+
+</script>
+
+</body>
+</html>

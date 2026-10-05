@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Compatibility</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f6fa;
+            color: #222;
+        }
+
+        header {
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 35px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        /* 1. Table Layout: Fixed */
+
+        .fixed-table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+
+        .fixed-table th,
+        .fixed-table td {
+            border: 2px solid #243b55;
+            padding: 12px;
+            word-wrap: break-word;
+        }
+
+        /* Table Layout: None */
+
+        .none-table {
+            width: 100%;
+            table-layout: auto;
+            border-collapse: collapse;
+        }
+
+        .none-table th,
+        .none-table td {
+            border: 2px solid #2a9d8f;
+            padding: 12px;
+        }
+
+        /* 2. Different List Styles */
+
+        .disc-list {
+            list-style-type: disc;
+        }
+
+        .circle-list {
+            list-style-type: circle;
+        }
+
+        .square-list {
+            list-style-type: square;
+        }
+
+        .roman-list {
+            list-style-type: upper-roman;
+        }
+
+        /* 3. CSS Grid */
+
+        .grid-one {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .grid-two {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 15px;
+        }
+
+        .grid-three {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .grid-item {
+            background: #dbeafe;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* 4. Hero Image */
+
+        .hero {
+            height: 350px;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.35),
+                    rgba(0, 0, 0, 0.35)
+                ),
+                url("https://picsum.photos/id/1018/1200/600");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+        }
+
+        /* 5. Viewport / Responsive Grid */
+
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .responsive-item {
+            background: #dcfce7;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        /* Responsive image */
+
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Responsive video */
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Media Query */
+
+        @media (max-width: 800px) {
+
+            .responsive-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grid-one,
+            .grid-three {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .responsive-grid,
+            .grid-one,
+            .grid-two,
+            .grid-three {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                width: 95%;
+            }
+
+            .hero {
+                height: 250px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+        }
+
+        footer {
+            background: #141e30;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS Compatibility</h1>
+        <p>Tables, Lists, Grids, Hero Image and Viewport</p>
+    </header>
+
+
+    <div class="container">
+
+        <!-- 1. Table Layout -->
+
+        <div class="box">
+
+            <h2>1. Table Layout - Fixed</h2>
+
+            <table class="fixed-table">
+
+                <tr>
+                    <th>Name</th>
+                    <th>Technology</th>
+                    <th>Description</th>
+                </tr>
+
+                <tr>
+                    <td>Dedeepya</td>
+                    <td>HTML5</td>
+                    <td>Structure of a webpage</td>
+                </tr>
+
+                <tr>
+                    <td>Student</td>
+                    <td>CSS</td>
+                    <td>Styling and layout</td>
+                </tr>
+
+            </table>
+
+
+            <h2>Table Layout - None</h2>
+
+            <table class="none-table">
+
+                <tr>
+                    <th>Name</th>
+                    <th>Technology</th>
+                    <th>Description</th>
+                </tr>
+
+                <tr>
+                    <td>Dedeepya</td>
+                    <td>JavaScript</td>
+                    <td>Programming language for web pages</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <!-- 2. List Style Types -->
+
+        <div class="box">
+
+            <h2>2. Different List Style Types</h2>
+
+            <h3>Disc</h3>
+
+            <ul class="disc-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+
+
+            <h3>Circle</h3>
+
+            <ul class="circle-list">
+                <li>Python</li>
+                <li>Java</li>
+                <li>SQL</li>
+            </ul>
+
+
+            <h3>Square</h3>
+
+            <ul class="square-list">
+                <li>React</li>
+                <li>Angular</li>
+                <li>Bootstrap</li>
+            </ul>
+
+
+            <h3>Upper Roman</h3>
+
+            <ol class="roman-list">
+                <li>Frontend</li>
+                <li>Backend</li>
+                <li>Database</li>
+            </ol>
+
+        </div>
+
+
+        <!-- 3. Different Grids -->
+
+        <div class="box">
+
+            <h2>3. CSS Grid - Three Columns</h2>
+
+            <div class="grid-one">
+
+                <div class="grid-item">HTML</div>
+                <div class="grid-item">CSS</div>
+                <div class="grid-item">JavaScript</div>
+
+            </div>
+
+
+            <h2>CSS Grid - Different Column Sizes</h2>
+
+            <div class="grid-two">
+
+                <div class="grid-item">Frontend</div>
+                <div class="grid-item">Backend Development</div>
+
+            </div>
+
+
+            <h2>CSS Grid - Four Columns</h2>
+
+            <div class="grid-three">
+
+                <div class="grid-item">HTML</div>
+                <div class="grid-item">CSS</div>
+                <div class="grid-item">JS</div>
+                <div class="grid-item">SQL</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 4. Hero Image -->
+
+        <div class="box">
+
+            <h2>4. Hero Image</h2>
+
+            <div class="hero">
+
+                <div>
+                    <h2>Welcome to My Learning Page</h2>
+                    <p>Responsive CSS Hero Image</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 5. Viewport and Media Queries -->
+
+        <div class="box">
+
+            <h2>5. Viewport and Responsive Grid</h2>
+
+            <p>
+                Resize the browser window to see the grid
+                change according to the viewport.
+            </p>
+
+            <div class="responsive-grid">
+
+                <div class="responsive-item">Item 1</div>
+                <div class="responsive-item">Item 2</div>
+                <div class="responsive-item">Item 3</div>
+                <div class="responsive-item">Item 4</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Responsive Image -->
+
+        <div class="box">
+
+            <h2>Responsive Image</h2>
+
+            <img
+                class="responsive-image"
+                src="https://picsum.photos/id/1015/900/400"
+                alt="Responsive Nature Image">
+
+        </div>
+
+
+        <!-- Responsive Video -->
+
+        <div class="box">
+
+            <h2>Responsive Video</h2>
+
+            <div class="video-container">
+
+                <video controls>
+                    <source
+                        src="https://www.w3schools.com/html/mov_bbb.mp4"
+                        type="video/mp4">
+                    Your browser does not support video.
+                </video>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        <p>© 2026 CSS Compatibility</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 Semantic Elements</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #243b55;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header h1,
+        header h2 {
+            margin: 8px;
+        }
+
+        nav {
+            background: #141e30;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        .non-semantic {
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 900px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .non-semantic span {
+            background: #fff3a3;
+            padding: 3px 6px;
+        }
+
+        section,
+        article,
+        aside,
+        figure {
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 900px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        mark {
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        figure {
+            text-align: center;
+        }
+
+        figure img {
+            max-width: 100%;
+            width: 300px;
+            border-radius: 8px;
+        }
+
+        figcaption {
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        form input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        form input[type="submit"] {
+            background: #243b55;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #999;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #243b55;
+            color: white;
+        }
+
+        footer {
+            background: #141e30;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="text-align:center;">HTML5 Semantic Elements</h1>
+
+    <!-- Non-Semantic Elements -->
+    <div class="non-semantic">
+        <h2>1. Non-Semantic Elements</h2>
+
+        <div>
+            This is a DIV element. It is a non-semantic element.
+        </div>
+
+        <p>
+            This is a
+            <span>SPAN element</span>.
+            It is also a non-semantic element.
+        </p>
+    </div>
+
+    <!-- Semantic Elements -->
+    <header>
+        <hgroup>
+            <h1>My Learning Website</h1>
+            <h2>HTML5 Semantic Elements</h2>
+        </hgroup>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#article">Article</a>
+        <a href="#form">Form</a>
+        <a href="#table">Table</a>
+    </nav>
+
+    <!-- Section -->
+    <section>
+        <h2>About HTML5</h2>
+
+        <p>
+            HTML5 provides semantic elements that clearly describe
+            the meaning and structure of webpage content.
+        </p>
+    </section>
+
+    <!-- Article -->
+    <article id="article">
+        <h2>HTML5 Article</h2>
+
+        <p>
+            This is an article section of the webpage.
+            HTML5 semantic elements make the structure easier to understand.
+        </p>
+
+        <p>
+            HTML5 is
+            <mark>important for modern web development</mark>.
+        </p>
+
+        <p>
+            Assignment completed on
+            <time datetime="2026-10-05">October 5, 2026</time>.
+        </p>
+    </article>
+
+    <!-- Aside -->
+    <aside>
+        <h3>Related Information</h3>
+
+        <p>
+            This is an aside section containing additional information.
+        </p>
+    </aside>
+
+    <!-- Figure and Figcaption -->
+    <figure>
+        <img src="https://picsum.photos/300/150" alt="HTML5 Example">
+
+        <figcaption>
+            Figure: HTML5 Semantic Elements
+        </figcaption>
+    </figure>
+
+    <!-- Form -->
+    <section id="form">
+        <h2>HTML5 Form</h2>
+
+        <form>
+            <label>Name:</label>
+            <input type="text" name="name" required>
+
+            <br><br>
+
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <!-- Table -->
+    <section id="table">
+        <h2>HTML5 Table</h2>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Technology</th>
+            </tr>
+
+            <tr>
+                <td>Dedeepya</td>
+                <td>HTML5</td>
+            </tr>
+
+            <tr>
+                <td>Student</td>
+                <td>Frontend</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 My Learning Website</p>
+    </footer>
+
+</body>
+</html>

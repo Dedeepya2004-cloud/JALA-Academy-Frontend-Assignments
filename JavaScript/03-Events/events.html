@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Events</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f6fa;
+            margin: 0;
+        }
+
+        header {
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        button {
+            background: #243b55;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1a2d42;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        .result {
+            background: #eef4f8;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            line-height: 1.8;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Events</h1>
+        <p>Event Listener, Validation, Debugging, Cookies and JSON</p>
+    </header>
+
+
+    <div class="container">
+
+        <!-- 1. Event Listener -->
+
+        <div class="box">
+
+            <h2>1. Event Listener</h2>
+
+            <p>
+                Click the button to display the current date and time.
+            </p>
+
+            <button id="dateButton">
+                Show Current Date & Time
+            </button>
+
+            <div id="dateResult" class="result">
+                Date and time will appear here.
+            </div>
+
+        </div>
+
+
+        <!-- 2. JavaScript Validation -->
+
+        <div class="box">
+
+            <h2>2. JavaScript Validation</h2>
+
+            <p>
+                Enter some text before submitting the form.
+            </p>
+
+            <form id="myForm">
+
+                <input
+                    type="text"
+                    id="nameInput"
+                    placeholder="Enter your name">
+
+                <button type="submit">
+                    Submit
+                </button>
+
+            </form>
+
+            <div id="validationResult" class="result">
+                Validation result will appear here.
+            </div>
+
+        </div>
+
+
+        <!-- 3. console.log() Debugging -->
+
+        <div class="box">
+
+            <h2>3. console.log() Debugging</h2>
+
+            <p>
+                Open the browser Developer Console
+                (F12 → Console) and click the button.
+            </p>
+
+            <button id="debugButton">
+                Test console.log()
+            </button>
+
+            <div id="debugResult" class="result">
+                Check the browser console.
+            </div>
+
+        </div>
+
+
+        <!-- 4. Cookies -->
+
+        <div class="box">
+
+            <h2>4. Cookies</h2>
+
+            <button onclick="setCookie()">
+                Set Cookie
+            </button>
+
+            <button onclick="getCookie()">
+                Get Cookie
+            </button>
+
+            <button onclick="checkCookie()">
+                Check Cookie
+            </button>
+
+            <div id="cookieResult" class="result">
+                Cookie result will appear here.
+            </div>
+
+        </div>
+
+
+        <!-- 5. JSON Object -->
+
+        <div class="box">
+
+            <h2>5. JSON Object</h2>
+
+            <p>
+                JSON object values are accessed using dot notation.
+            </p>
+
+            <button id="jsonButton">
+                Display JSON Details
+            </button>
+
+            <div id="jsonResult" class="result">
+                JSON details will appear here.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // ==========================================
+        // 1. EVENT LISTENER
+        // ==========================================
+
+        // Add event listener to button
+
+        document.getElementById("dateButton")
+            .addEventListener("click", function () {
+
+                let currentDate = new Date();
+
+                document.getElementById("dateResult").innerHTML =
+                    "<b>Current Date & Time:</b><br>" +
+                    currentDate;
+
+            });
+
+
+        // ==========================================
+        // 2. JAVASCRIPT VALIDATION
+        // ==========================================
+
+        document.getElementById("myForm")
+            .addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+                let name =
+                    document.getElementById("nameInput").value;
+
+                let result =
+                    document.getElementById("validationResult");
+
+                if (name.trim() === "") {
+
+                    result.innerHTML =
+                        "<span class='error'>" +
+                        "Error: Text box cannot be empty." +
+                        "</span>";
+
+                } else {
+
+                    result.innerHTML =
+                        "<span class='success'>" +
+                        "Form submitted successfully. Hello " +
+                        name +
+                        "!" +
+                        "</span>";
+                }
+
+            });
+
+
+        // ==========================================
+        // 3. console.log() DEBUGGING
+        // ==========================================
+
+        document.getElementById("debugButton")
+            .addEventListener("click", function () {
+
+                console.log("Debugging message: Button was clicked.");
+
+                console.log("JavaScript is working correctly.");
+
+                document.getElementById("debugResult").innerHTML =
+                    "Debug message has been sent to the browser console.";
+
+            });
+
+
+        // ==========================================
+        // 4. COOKIES
+        // ==========================================
+
+        // Set Cookie
+
+        function setCookie() {
+
+            document.cookie =
+                "username=Dedeepya; max-age=3600; path=/";
+
+            document.getElementById("cookieResult").innerHTML =
+                "Cookie has been set successfully.";
+
+        }
+
+
+        // Get Cookie
+
+        function getCookie() {
+
+            let cookies = document.cookie;
+
+            document.getElementById("cookieResult").innerHTML =
+                "<b>Current Cookies:</b><br>" +
+                (cookies || "No cookies found.");
+
+        }
+
+
+        // Check Cookie
+
+        function checkCookie() {
+
+            if (document.cookie.includes("username=")) {
+
+                document.getElementById("cookieResult").innerHTML =
+                    "<span class='success'>" +
+                    "Cookie exists." +
+                    "</span>";
+
+            } else {
+
+                document.getElementById("cookieResult").innerHTML =
+                    "<span class='error'>" +
+                    "Cookie does not exist." +
+                    "</span>";
+
+            }
+
+        }
+
+
+        // ==========================================
+        // 5. JSON OBJECT
+        // ==========================================
+
+        let person = {
+
+            firstname: "Dedeepya",
+            lastname: "Potnuru",
+            course: "Frontend Development"
+
+        };
+
+
+        document.getElementById("jsonButton")
+            .addEventListener("click", function () {
+
+                document.getElementById("jsonResult").innerHTML =
+
+                    "<b>First Name:</b> " +
+                    person.firstname +
+
+                    "<br><b>Last Name:</b> " +
+                    person.lastname +
+
+                    "<br><b>Course:</b> " +
+                    person.course;
+
+            });
+
+
+    </script>
+
+</body>
+
+</html>

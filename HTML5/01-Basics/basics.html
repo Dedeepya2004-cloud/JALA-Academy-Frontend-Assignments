@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>HTML5 Basics Assignment</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 30px;
+        }
+
+        /* Division styling */
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+        }
+
+        /* Pseudo-class */
+        a:hover {
+            color: red;
+        }
+
+        /* Pseudo-element */
+        p::first-letter {
+            font-size: 28px;
+            font-weight: bold;
+            color: blue;
+        }
+
+        img {
+            width: 350px;
+            max-width: 100%;
+        }
+
+        .highlight {
+            color: purple;
+            font-weight: bold;
+        }
+
+        .section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #e8f0fe;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Division -->
+
+    <div class="container">
+
+        <!-- Heading -->
+
+        <h1>HTML5 Basics Assignment</h1>
+
+        <h2>Welcome to My Web Page</h2>
+
+        <!-- Paragraph, Italic and Bold -->
+
+        <p>
+            This is my first HTML5 assignment.
+            I am learning <i>HTML5</i> and
+            <b>Frontend Technologies</b>.
+        </p>
+
+        <!-- Anchor -->
+
+        <h2>Useful Link</h2>
+
+        <p>
+            Visit
+            <a href="https://www.google.com" target="_blank">
+                Google
+            </a>
+            to search for information.
+        </p>
+
+        <!-- Unordered List and List Items -->
+
+        <h2>Frontend Technologies</h2>
+
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>AngularJS</li>
+        </ul>
+
+        <!-- Label -->
+
+        <h2>Student Information</h2>
+
+        <label for="studentName">
+            Student Name:
+        </label>
+
+        <input
+            type="text"
+            id="studentName"
+            placeholder="Enter your name"
+        >
+
+        <!-- Blockquote -->
+
+        <h2>Quote</h2>
+
+        <blockquote>
+            Learning web technologies becomes easier
+            when we practice by building projects.
+        </blockquote>
+
+        <!-- Horizontal Rule -->
+
+        <hr>
+
+        <!-- Image -->
+
+        <h2>Web Development</h2>
+
+        <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+            alt="Laptop showing web development"
+        >
+
+        <!-- Span -->
+
+        <p>
+            HTML provides the
+            <span class="highlight">
+                structure
+            </span>
+            of a webpage.
+        </p>
+
+        <!-- Internal Navigation -->
+
+        <p>
+            <a href="#about">
+                Go to About Section
+            </a>
+        </p>
+
+        <!-- Different Section -->
+
+        <div id="about" class="section">
+
+            <h2>About This Assignment</h2>
+
+            <p>
+                This is a different section of the
+                same webpage.
+            </p>
+
+            <p>
+                This section demonstrates
+                <b>internal page navigation</b>.
+            </p>
+
+            <a href="#top">
+                Back to Top
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

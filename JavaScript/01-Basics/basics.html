@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Basics</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f6fa;
+            margin: 0;
+        }
+
+        header {
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        button {
+            background: #243b55;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1a2d42;
+        }
+
+        #fruitResult {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .code {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .result {
+            background: #eef4f8;
+            padding: 15px;
+            border-radius: 5px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Basics</h1>
+        <p>Learning JavaScript Fundamentals</p>
+    </header>
+
+
+    <div class="container">
+
+
+        <!-- 1. Single-line and Multi-line Comments -->
+
+        <div class="box">
+
+            <h2>1. JavaScript Comments</h2>
+
+            <p>Single-line comment:</p>
+
+            <div class="code">
+                // This is a single-line comment
+            </div>
+
+            <p>Multi-line comment:</p>
+
+            <div class="code">
+                /*<br>
+                This is a multi-line comment<br>
+                */
+            </div>
+
+        </div>
+
+
+        <!-- 2. Fruit Array -->
+
+        <div class="box">
+
+            <h2>2. Fruit Array - Descending Order</h2>
+
+            <p>
+                Click the button to sort the fruit names
+                in descending order.
+            </p>
+
+            <button onclick="sortFruits()">
+                Sort Fruits
+            </button>
+
+            <p id="fruitResult" class="result"></p>
+
+        </div>
+
+
+        <!-- 3. FOR/IN Loop -->
+
+        <div class="box">
+
+            <h2>3. FOR/IN Loop</h2>
+
+            <p>
+                The FOR/IN loop displays the properties
+                of the person object.
+            </p>
+
+            <div id="loopResult" class="result"></div>
+
+        </div>
+
+
+        <!-- 4. Person Object -->
+
+        <div class="box">
+
+            <h2>4. Person Object</h2>
+
+            <p>
+                Properties are accessed using two different ways.
+            </p>
+
+            <div id="objectResult" class="result"></div>
+
+        </div>
+
+
+        <!-- 5. Variable Hoisting -->
+
+        <div class="box">
+
+            <h2>5. Variable Hoisting</h2>
+
+            <p>
+                Initialization is done before the declaration.
+            </p>
+
+            <div id="hoistingResult" class="result"></div>
+
+        </div>
+
+
+        <!-- 6. Strict Mode -->
+
+        <div class="box">
+
+            <h2>6. Strict Mode</h2>
+
+            <p>
+                Strict mode causes an error when an undeclared
+                variable is used.
+            </p>
+
+            <button onclick="strictModeExample()">
+                Test Strict Mode
+            </button>
+
+            <p id="strictResult" class="result"></p>
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+
+
+        // ==========================================
+        // 1. SINGLE-LINE COMMENT
+        // ==========================================
+
+        // This is a single-line comment.
+
+
+        /*
+           This is a multi-line comment.
+           It can contain multiple lines.
+        */
+
+
+        // ==========================================
+        // 2. FRUIT ARRAY - DESCENDING ORDER
+        // ==========================================
+
+        let fruits = [
+            "Apple",
+            "Banana",
+            "Mango",
+            "Orange",
+            "Grapes"
+        ];
+
+
+        function sortFruits() {
+
+            fruits.sort();
+
+            fruits.reverse();
+
+            document.getElementById("fruitResult").innerHTML =
+                fruits.join(", ");
+
+        }
+
+
+        // ==========================================
+        // 3. PERSON OBJECT
+        // ==========================================
+
+        let person = {
+
+            firstname: "Dedeepya",
+            lastname: "Potnuru"
+
+        };
+
+
+        // ==========================================
+        // 4. FOR/IN LOOP
+        // ==========================================
+
+        let output = "";
+
+
+        for (let property in person) {
+
+            output +=
+                property +
+                " : " +
+                person[property] +
+                "<br>";
+
+        }
+
+
+        document.getElementById("loopResult").innerHTML =
+            output;
+
+
+        // ==========================================
+        // 5. ACCESS OBJECT IN TWO DIFFERENT WAYS
+        // ==========================================
+
+        // Method 1 - Dot notation
+
+        let firstName1 = person.firstname;
+
+        let lastName1 = person.lastname;
+
+
+        // Method 2 - Bracket notation
+
+        let firstName2 = person["firstname"];
+
+        let lastName2 = person["lastname"];
+
+
+        document.getElementById("objectResult").innerHTML =
+
+            "Dot notation: " +
+            firstName1 +
+            " " +
+            lastName1 +
+
+            "<br>" +
+
+            "Bracket notation: " +
+            firstName2 +
+            " " +
+            lastName2;
+
+
+        // ==========================================
+        // 6. VARIABLE HOISTING
+        // ==========================================
+
+        // Initialization first
+
+        hoistedValue = 100;
+
+        // Declaration after initialization
+
+        var hoistedValue;
+
+
+        document.getElementById("hoistingResult").innerHTML =
+
+            "Hoisted value: " +
+            hoistedValue;
+
+
+        // ==========================================
+        // 7. STRICT MODE
+        // ==========================================
+
+        function strictModeExample() {
+
+            "use strict";
+
+
+            try {
+
+                undeclaredVariable = 100;
+
+
+            } catch (error) {
+
+                document.getElementById("strictResult").innerHTML =
+
+                    "Strict mode error: " +
+                    error.message;
+
+            }
+
+        }
+
+
+    </script>
+
+</body>
+</html>

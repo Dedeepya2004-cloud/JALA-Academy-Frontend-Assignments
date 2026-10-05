@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 Form Elements</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f2fe, #f5f3ff);
+            margin: 0;
+            padding: 30px;
+            color: #222;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4f46e5;
+        }
+
+        h2 {
+            color: #2563eb;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        .field {
+            margin: 12px 0;
+        }
+
+        label {
+            display: inline-block;
+            min-width: 180px;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 6px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        input[type="submit"],
+        input[type="reset"],
+        input[type="button"] {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 9px 18px;
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover,
+        input[type="button"]:hover {
+            background: #2563eb;
+        }
+
+        a {
+            color: #4f46e5;
+            font-weight: bold;
+        }
+
+        iframe {
+            width: 100%;
+            height: 250px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+
+        marquee {
+            background: #4f46e5;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .note {
+            background: #f3f4f6;
+            padding: 12px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>HTML5 Form Elements & Input Attributes</h1>
+
+    <!-- 1. Basic Input Attributes -->
+    <h2>1. Basic Input Attributes</h2>
+
+    <form>
+
+        <div class="field">
+            <label>Text:</label>
+            <input type="text" placeholder="Enter your name">
+        </div>
+
+        <div class="field">
+            <label>Password:</label>
+            <input type="password" placeholder="Enter password">
+        </div>
+
+        <div class="field">
+            <label>Radio:</label>
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+        </div>
+
+        <div class="field">
+            <label>Checkbox:</label>
+            <input type="checkbox"> HTML
+            <input type="checkbox"> CSS
+        </div>
+
+        <div class="field">
+            <label>Buttons:</label>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+            <input type="button" value="Button"
+                   onclick="alert('Button clicked!')">
+        </div>
+
+    </form>
+
+
+    <!-- 2. HTML5 Input Types -->
+    <h2>2. HTML5 Input Types</h2>
+
+    <form>
+
+        <div class="field">
+            <label>Number:</label>
+            <input type="number" min="1" max="100">
+        </div>
+
+        <div class="field">
+            <label>Range:</label>
+            <input type="range" min="0" max="100">
+        </div>
+
+        <div class="field">
+            <label>Color:</label>
+            <input type="color">
+        </div>
+
+        <div class="field">
+            <label>Date:</label>
+            <input type="date">
+        </div>
+
+        <div class="field">
+            <label>File:</label>
+            <input type="file">
+        </div>
+
+        <div class="field">
+            <label>Time:</label>
+            <input type="time">
+        </div>
+
+        <div class="field">
+            <label>Month:</label>
+            <input type="month">
+        </div>
+
+        <div class="field">
+            <label>Week:</label>
+            <input type="week">
+        </div>
+
+        <div class="field">
+            <label>Email:</label>
+            <input type="email" placeholder="example@email.com">
+        </div>
+
+    </form>
+
+
+    <!-- 3. Input Restrictions -->
+    <h2>3. Input Restrictions</h2>
+
+    <form>
+
+        <div class="field">
+            <label>Disabled:</label>
+            <input type="text" value="Disabled field" disabled>
+        </div>
+
+        <div class="field">
+            <label>Max (50):</label>
+            <input type="number" max="50" value="25">
+        </div>
+
+        <div class="field">
+            <label>Maxlength (10):</label>
+            <input type="text" maxlength="10" value="Hello">
+        </div>
+
+        <div class="field">
+            <label>Min (10):</label>
+            <input type="number" min="10" value="20">
+        </div>
+
+        <div class="field">
+            <label>Readonly:</label>
+            <input type="text" value="Read only" readonly>
+        </div>
+
+        <div class="field">
+            <label>Required:</label>
+            <input type="text" required>
+        </div>
+
+        <div class="field">
+            <label>Size (30):</label>
+            <input type="text" size="30" value="Size example">
+        </div>
+
+        <div class="field">
+            <label>Value:</label>
+            <input type="text" value="Default value">
+        </div>
+
+    </form>
+
+
+    <!-- 4. Target Attribute -->
+<h2>4. Target Attribute</h2>
+
+<p class="note">
+    Click the link to open Google in a new tab:
+</p>
+
+<a href="https://www.google.com" target="_blank">
+    Open Google in New Tab
+</a>
+
+
+<!-- 5. Iframe -->
+<h2>5. Iframe</h2>
+
+<iframe
+    srcdoc="
+        <html>
+        <body style='font-family: Arial; padding: 20px; background: #f3f4f6;'>
+            <h2>Welcome to the Iframe</h2>
+            <p>This content is displayed inside an iframe.</p>
+            <p>This demonstrates the HTML5 iframe element.</p>
+        </body>
+        </html>
+    "
+    width="100%"
+    height="250"
+    title="Iframe Example">
+</iframe>
+
+
+<!-- 6. Marquee -->
+<h2>6. Marquee</h2>
+
+<marquee>
+    Welcome to my HTML5 Form Elements Assignment!
+</marquee>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Effects</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f6fa;
+            color: #222;
+        }
+
+        header {
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        /* 1. Image shadow and hover */
+
+        .shadow-image {
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 8px 8px 15px #777;
+            transition: 0.4s;
+        }
+
+        .shadow-image:hover {
+            transform: scale(1.08);
+            box-shadow: 12px 12px 25px #333;
+        }
+
+        /* 2. CSS Animation */
+
+        .animation-box {
+            width: 150px;
+            height: 80px;
+            background: #243b55;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            animation-name: moveBox;
+            animation-duration: 3s;
+            animation-iteration-count: 3;
+            animation-delay: 1s;
+        }
+
+        @keyframes moveBox {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(300px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Pagination without spaces */
+
+        .pagination-no-space a {
+            display: inline-block;
+            padding: 10px 15px;
+            border: 1px solid #243b55;
+            text-decoration: none;
+            color: #243b55;
+            margin-right: -5px;
+        }
+
+        .pagination-no-space a:hover {
+            background: #243b55;
+            color: white;
+        }
+
+        /* Pagination with spaces */
+
+        .pagination-space a {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 5px;
+            border: 1px solid #243b55;
+            text-decoration: none;
+            color: #243b55;
+            border-radius: 5px;
+        }
+
+        .pagination-space a:hover {
+            background: #243b55;
+            color: white;
+        }
+
+        /* 3. Position properties */
+
+        .position-area {
+            height: 450px;
+            border: 2px solid #ddd;
+            position: relative;
+            padding: 20px;
+        }
+
+        .static-box {
+            position: static;
+            background: #dbeafe;
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .relative-box {
+            position: relative;
+            left: 30px;
+            background: #dcfce7;
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .absolute-box {
+            position: absolute;
+            top: 150px;
+            right: 30px;
+            background: #fde68a;
+            padding: 15px;
+        }
+
+        .sticky-box {
+            position: sticky;
+            top: 0;
+            background: #fbcfe8;
+            padding: 15px;
+            margin: 10px;
+        }
+
+        .fixed-box {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #243b55;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* 4. Overflow */
+
+        .overflow-box {
+            width: 400px;
+            height: 120px;
+            overflow: scroll;
+            border: 2px solid #243b55;
+            padding: 15px;
+        }
+
+        /* 5. Image opacity */
+
+        .opacity-image {
+            width: 350px;
+            opacity: 0.5;
+        }
+
+        .opacity-image:hover {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS Effects</h1>
+        <p>Shadow, Animation, Position, Overflow and Opacity</p>
+    </header>
+
+    <div class="container">
+
+        <!-- 1. Image Shadow and Hover -->
+
+        <div class="box">
+
+            <h2>1. Image Shadow and Hover Effect</h2>
+
+            <p>Move the mouse over the image.</p>
+
+            <img
+                class="shadow-image"
+                src="https://picsum.photos/id/1015/300/200"
+                alt="Nature Image">
+
+        </div>
+
+
+        <!-- 2. Animation -->
+
+        <div class="box">
+
+            <h2>2. CSS Animation</h2>
+
+            <p>
+                Animation Name: moveBox |
+                Duration: 3 seconds |
+                Iteration Count: 3 |
+                Delay: 1 second
+            </p>
+
+            <div class="animation-box">
+                Animated Box
+            </div>
+
+        </div>
+
+
+        <!-- Pagination -->
+
+        <div class="box">
+
+            <h2>Pagination Without Spaces</h2>
+
+            <div class="pagination-no-space">
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+            </div>
+
+
+            <h2>Pagination With Spaces</h2>
+
+            <div class="pagination-space">
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+            </div>
+
+        </div>
+
+
+        <!-- 3. Position -->
+
+        <div class="box">
+
+            <h2>3. CSS Position Properties</h2>
+
+            <div class="position-area">
+
+                <div class="static-box">
+                    Position: Static
+                </div>
+
+                <div class="relative-box">
+                    Position: Relative
+                </div>
+
+                <div class="absolute-box">
+                    Position: Absolute
+                </div>
+
+                <div class="sticky-box">
+                    Position: Sticky
+                </div>
+
+            </div>
+
+            <p>
+                The fixed box is visible at the bottom-right
+                of the browser window.
+            </p>
+
+        </div>
+
+
+        <!-- Fixed Position -->
+
+        <div class="fixed-box">
+            Fixed Position
+        </div>
+
+
+        <!-- 4. Overflow -->
+
+        <div class="box">
+
+            <h2>4. Overflow Using Scroll</h2>
+
+            <div class="overflow-box">
+
+                <p>
+                    This is an overflow example.
+                </p>
+
+                <p>
+                    The box has a fixed width and height.
+                    When the content is larger than the box,
+                    scrollbars appear.
+                </p>
+
+                <p>
+                    CSS overflow controls what happens when
+                    content does not fit inside an element.
+                </p>
+
+                <p>
+                    Scroll inside this box to see more content.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- 5. Opacity -->
+
+        <div class="box">
+
+            <h2>5. Image Opacity</h2>
+
+            <p>
+                The image has 50% opacity.
+                Move the mouse over it to make it fully visible.
+            </p>
+
+            <img
+                class="opacity-image"
+                src="https://picsum.photos/id/1018/350/220"
+                alt="Landscape Image">
+
+        </div>
+
+    </div>
+
+</body>
+</html>

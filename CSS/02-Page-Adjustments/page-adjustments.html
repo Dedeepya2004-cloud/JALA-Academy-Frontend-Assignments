@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Page Adjustments</title>
+
+    <style>
+
+        /* Basic page styling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        nav {
+            background: #141e30;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 1. Table border and hover */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 2px solid black;
+            padding: 12px;
+            text-align: left;
+        }
+
+        tr:hover {
+            background-color: #dbeafe;
+        }
+
+        /* 2. Visibility examples */
+        .visible {
+            visibility: visible;
+            background-color: #dcfce7;
+            padding: 15px;
+        }
+
+        .hidden {
+            visibility: hidden;
+            background-color: #fecaca;
+            padding: 15px;
+        }
+
+        .collapse {
+            visibility: collapse;
+            background-color: #fde68a;
+            padding: 15px;
+        }
+
+        /* Display examples */
+        .display-none {
+            display: none;
+        }
+
+        .display-inline {
+            display: inline;
+            background-color: #bfdbfe;
+            padding: 8px;
+        }
+
+        .display-block {
+            display: block;
+            background-color: #bbf7d0;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        .display-contents {
+            display: contents;
+        }
+
+        .display-list-item {
+            display: list-item;
+            margin-left: 25px;
+        }
+
+        /* 4. Padding and margin */
+        .spacing-box {
+            background-color: #fef3c7;
+            padding: 40px;
+            margin: 30px;
+            border: 2px solid #f59e0b;
+        }
+
+        /* 5. Multiple background images */
+        .multi-background {
+            min-height: 300px;
+
+            background-image:
+                url("https://picsum.photos/id/1015/500/300"),
+                url("https://picsum.photos/id/1018/500/300");
+
+            background-size: 50% 100%, 50% 100%;
+            background-position: left, right;
+            background-repeat: no-repeat;
+
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        /* Bottom link */
+        .bottom-link {
+            text-align: center;
+            margin: 40px;
+        }
+
+        .bottom-link a {
+            background: #243b55;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #141e30;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+
+<body id="top">
+
+    <header>
+        <h1>CSS Page Adjustments</h1>
+        <p>Visibility, Display, Spacing, Tables and Background Images</p>
+    </header>
+
+    <nav>
+        <a href="#table">Table</a>
+        <a href="#visibility">Visibility</a>
+        <a href="#spacing">Spacing</a>
+        <a href="#background">Backgrounds</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- 1. Table Border and Hover -->
+        <div class="box" id="table">
+
+            <h2>1. Table Border and Hover</h2>
+
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Technology</th>
+                    <th>Level</th>
+                </tr>
+
+                <tr>
+                    <td>Dedeepya</td>
+                    <td>HTML</td>
+                    <td>Beginner</td>
+                </tr>
+
+                <tr>
+                    <td>Student</td>
+                    <td>CSS</td>
+                    <td>Learning</td>
+                </tr>
+
+                <tr>
+                    <td>Frontend</td>
+                    <td>JavaScript</td>
+                    <td>Learning</td>
+                </tr>
+            </table>
+
+            <p>Move your mouse over a table row to see the hover effect.</p>
+
+        </div>
+
+        <!-- 2. Visibility and Display -->
+        <div class="box" id="visibility">
+
+            <h2>2. Visibility and Display</h2>
+
+            <h3>Visibility</h3>
+
+            <div class="visible">
+                Visibility: Visible
+            </div>
+
+            <div class="hidden">
+                Visibility: Hidden
+            </div>
+
+            <div class="collapse">
+                Visibility: Collapse
+            </div>
+
+            <h3>Display</h3>
+
+            <span class="display-inline">
+                Display: Inline
+            </span>
+
+            <span class="display-block">
+                Display: Block
+            </span>
+
+            <div class="display-contents">
+                <span>Display: Contents</span>
+            </div>
+
+            <div class="display-list-item">
+                Display: List Item
+            </div>
+
+            <p class="display-none">
+                This text uses display: none.
+            </p>
+
+        </div>
+
+        <!-- 3. Smooth Top and Bottom Navigation -->
+        <div class="box">
+
+            <h2>3. Smooth Scrolling</h2>
+
+            <p>
+                This page contains links to navigate to the top and bottom.
+                Scroll down to see the bottom link.
+            </p>
+
+        </div>
+
+        <!-- Extra content to make page long -->
+        <div class="box">
+            <h2>More Content</h2>
+
+            <p>
+                CSS allows developers to control the appearance,
+                layout and spacing of web pages.
+            </p>
+
+            <p>
+                Padding creates space inside an element,
+                while margin creates space outside an element.
+            </p>
+
+            <p>
+                This section makes the page long enough to demonstrate
+                smooth scrolling.
+            </p>
+        </div>
+
+        <!-- 4. Padding and Margin -->
+        <div class="box" id="spacing">
+
+            <h2>4. Padding and Margin</h2>
+
+            <div class="spacing-box">
+                <strong>Padding:</strong> 40px inside the box.
+                <br><br>
+                <strong>Margin:</strong> 30px outside the box.
+            </div>
+
+        </div>
+
+        <!-- 5. Multiple Background Images -->
+        <div class="box" id="background">
+
+            <h2>5. Multiple Background Images</h2>
+
+            <div class="multi-background">
+
+                <h2>Multiple Background Images</h2>
+
+                <p>
+                    This element contains two background images
+                    with adjustable background sizes.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="bottom-link">
+            <a href="#top">Click to go to Top of Page</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 CSS Page Adjustments</p>
+    </footer>
+
+</body>
+</html>
